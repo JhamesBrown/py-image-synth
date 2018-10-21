@@ -15,7 +15,6 @@ draw = ImageDraw.Draw(img)
 
 r = random.randint
 l = draw.line
-blur = ImageFilter.GaussianBlur
 
 def imageSynth():
     draw.line((0,r(-200,400),200,r(-200,400)))
