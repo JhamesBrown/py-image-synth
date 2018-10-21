@@ -1,6 +1,11 @@
 import random, time
 from PIL import Image, ImageDraw
 
+"""
+draws a ring with horizontal line distressing
+"""
+
+
 FGColor = (255,165,000)
 BGColor = (20,0,40)
 
@@ -10,6 +15,7 @@ draw = ImageDraw.Draw(img)
 
 def imageSynth():
     draw.ellipse((40,40,160,160), FGColor , None , 0 )
+    draw.ellipse((50,50,150,150), BGColor , None , 0 )
     for x in range(img.size[1]):
         rand1 = random.randint(0,img.size[0])
         rand2 = random.randint(0,img.size[0])
