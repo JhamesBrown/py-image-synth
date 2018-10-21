@@ -1,16 +1,26 @@
 import random, time
 from PIL import Image, ImageDraw
 
-img = Image.new('RGB', (200,200), color = (255,0,0))
+FGColor = (255,165,000)
+BGColor = (20,0,40)
+
+img = Image.new('RGB', (200,200), color = (20,0,40))
 
 draw = ImageDraw.Draw(img)
 
-for x in range(0, img.size[1]):
-    rand1 = random.randint(0,img.size[0])
-    rand2 = random.randint(0,img.size[0])
-    draw.line((rand1,x,rand2,x), fill= (0,0,255) )
+def imageSynth():
+    draw.ellipse((40,40,160,160), FGColor , None , 0 )
+    for x in range(img.size[1]):
+        rand1 = random.randint(0,img.size[0])
+        rand2 = random.randint(0,img.size[0])
+        draw.line( (rand1,x,rand2,x) , BGColor , 1)
+    return
+
+
+imageSynth()
+
 del draw
 
-timeStamp = time.strftime('%Y%m%h')
+timeStamp = time.strftime('%y%m%H%M')
 filename = 'exp_'+timeStamp+'.png'
 img.save('output/'+filename)
